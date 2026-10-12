@@ -1,9 +1,12 @@
+
+DONE_MARK = " (done)"
 tasks = []
 while True:
     print("1) Add task")
     print("2) Show tasks")
     print("3) Remove task")
-    print("4) Exit")
+    print("4) Mark task as done")
+    print("5) Exit") 
     user = int(input(" enter your option: "))
     if user == 1:
         task = input("enter your task: ")
@@ -21,9 +24,18 @@ while True:
         else:
             print(" not exist ")
 
-    elif user == 4:
-        break
 
+    elif user == 4:
+        done = int(input(" Select the task you have finished. "))
+        if 1 <= done <= len(tasks):
+            if tasks[done-1].endswith(DONE_MARK):
+                print("It has already been checked.")
+            else:
+                tasks[done-1] += DONE_MARK
+        else:
+            print(" no task")
+    elif user == 5:
+            break
     else:
         print(" error")
         
