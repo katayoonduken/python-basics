@@ -4,7 +4,7 @@ while True:
     print("3) Exit")
     user = int(input( " enter your chioce :"))
     if user == 1 :
-        text = input("enter your txet: ").lower().replace(" ","").isalnum()
+        text = input("enter your txet: ").lower().replace(" ","")
         if text == text[::-1]:
             print(" Palindrome ")
         else:
